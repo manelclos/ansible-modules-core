@@ -104,7 +104,7 @@ tasks:
     iam_name: "{{ item.user }}"
     policy_name: "s3_limited_access_{{ item.prefix }}"
     state: present
-    policy_json: " {{ lookup( 'template', 's3_policy.json.j2') }} "
+    policy_json: "{{ lookup( 'template', 's3_policy.json.j2') }}"
     with_items:
       - user: s3_user
         prefix: s3_user_prefix
