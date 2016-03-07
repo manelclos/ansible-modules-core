@@ -93,8 +93,7 @@ EXAMPLES = '''
 - name: another way of allocating an elastic IP without associating it to anything
   ec2_eip: state='present'
 - name: provision new instances with ec2
-  ec2: keypair=mykey instance_type=c1.medium image=emi-40603AD1 wait=yes'''
-''' group=webserver count=3
+  ec2: keypair=mykey instance_type=c1.medium image=emi-40603AD1 wait=yes group=webserver count=3
   register: ec2
 - name: associate new elastic IPs with each of the instances
   ec2_eip: "device_id={{ item }}"
